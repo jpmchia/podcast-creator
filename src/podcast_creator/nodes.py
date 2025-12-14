@@ -30,7 +30,7 @@ async def generate_outline_node(state: PodcastState, config: RunnableConfig) -> 
     outline_model = AIFactory.create_language(
         outline_provider,
         outline_model_name,
-        config={"max_tokens": 3000, "structured": {"type": "json"}},
+        config={"max_tokens": 32000, "structured": {"type": "json"}},
     ).to_langchain()
 
     # Generate outline
@@ -70,7 +70,7 @@ async def generate_transcript_node(state: PodcastState, config: RunnableConfig) 
     transcript_model = AIFactory.create_language(
         transcript_provider,
         transcript_model_name,
-        config={"max_tokens": 5000, "structured": {"type": "json"}},
+        config={"max_tokens": 32000, "structured": {"type": "json"}},
     ).to_langchain()
 
     # Create validated transcript parser
